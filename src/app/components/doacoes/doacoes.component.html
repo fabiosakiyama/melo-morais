@@ -1,0 +1,31 @@
+<div class="doacoes">
+    <h1>Doações</h1>
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="doacoes">
+        <ng-container matColumnDef="doador">
+            <th mat-header-cell *matHeaderCellDef>Doador</th>
+            <td mat-cell *matCellDef="let element">{{ element.doador.nome }}</td>
+        </ng-container>
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef>Tipo</th>
+            <td mat-cell *matCellDef="let element">{{ element.tipo }}</td>
+        </ng-container>
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef>Valor</th>
+            <td mat-cell *matCellDef="let element">{{ element.valor }}</td>
+        </ng-container>
+        <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef>Data</th>
+            <td mat-cell *matCellDef="let element">{{ element.data }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator [pageSize]="pageInitial" showFirstLastButtons></mat-paginator>
+</div>

@@ -19,9 +19,12 @@ import { CadastroDoadorComponent } from './components/cadastro-doador/cadastro-d
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DoacoesComponent } from './components/doacoes/doacoes.component';
+import { CadastroDoacaoComponent } from './components/cadastro-doacao/cadastro-doacao.component';
 
 @NgModule({
-    declarations: [AppComponent, DoadoresComponent, GeradorRotasComponent, HeaderComponent, CadastroDoadorComponent],
+    declarations: [AppComponent, DoadoresComponent, GeradorRotasComponent, HeaderComponent, CadastroDoadorComponent, DoacoesComponent, CadastroDoacaoComponent],
     imports: [
         BrowserModule, 
         HttpClientModule,
@@ -36,7 +39,8 @@ import { MatIconModule } from '@angular/material/icon';
         ReactiveFormsModule,
         MatDialogModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        MatAutocompleteModule
     ],
     providers: [],
     bootstrap: [AppComponent],

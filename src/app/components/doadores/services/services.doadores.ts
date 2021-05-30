@@ -42,7 +42,7 @@ export class DoadoresService {
             params: params
         }
 
-        return this.httpClient.get<DoadoresGetModel[]>(`${this.apiUrl}/doacoes/semana`, myhttpOptions);
+        return this.httpClient.get<DoadoresGetModel[]>(`${this.apiUrl}/rota/semana`, myhttpOptions);
     }
 
     gerarRota(doadoresIds: number[]): Observable<any> {
@@ -55,6 +55,6 @@ export class DoadoresService {
             params: params
         }
 
-        return this.httpClient.get<DoadoresGetModel[]>(`${this.apiUrl}/doacoes/gera-rota`, myhttpOptions);
+        return this.httpClient.get<DoadoresGetModel[]>(`${this.apiUrl}/rota`, myhttpOptions);
     }
 }
